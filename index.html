@@ -11,26 +11,88 @@
     <title>Cresent - Junction Portfolio</title>
 
     <style>
+      @import url('https://fonts.2w.vc/suit/static/font.css');
       * {
         margin: 0;
         padding: 0;
+        font-family: 'SUIT', sans-serif;
+        overflow: hidden;
+
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
+        -webkit-touch-callout:none !important;
+        -webkit-touch-callout:none;
+        -webkit-user-select:none;
+        -webkit-user-drag:none;
+        cursor: default;
+      }
+      html, body {
+        width: 100%; height: 100%;
+        overscroll-behavior: none;
       }
       html {
         background-color: #f5f4f7;
       }
-      html, body {
-        width: 100%; height: 100%;
+      body {
+        overflow-y: auto;
       }
       img {
         width: 100%;
         padding-top: 56.25%;
         object-fit: cover;
       }
+
+      #topbar {
+        position: fixed;
+        z-index: 1;
+        top: 0; left: 0; right: 0;
+        height: 64px;
+        background-color: #f5f4f7cc;
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      #topbar p {
+        font-size: 18px;
+        font-weight: 500;
+        color: #09090C;
+        margin-left: 24px;
+      }
+      #topbar a {
+        font-size: 16px;
+        font-weight: 600;
+        background-color: #524B9B;
+        color: #F4F4F6 !important;
+        padding: 10px 16px;
+        border-radius: 100px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-right: 12px;
+      }
+      #topbar p#full {
+        display: block;
+      }
+      #topbar p#mini {
+        display: none;
+      }
+      @media (max-width: 440px) {
+        #topbar p#full {
+          display: none;
+        }
+        #topbar p#mini {
+          display: block;
+        }
+      }
+
       #images {
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: stretch;
+        padding-top: 64px;
       }
       #image {
         position: relative;
@@ -99,10 +161,15 @@
         100% {
           transform: scale(0.9);
         }
-      }      
+      }
     </style>
   </head>
   <body>
+    <div id="topbar">
+      <p id="full">Cresent - Junction Portfolio</p>
+      <p id="mini">Cresent Portfolio</p>
+      <a id="download" href="./Cresent - Junction Portfolio.pdf">Download</a>
+    </div>
     <div id="images">
       <div id="image" style="background-image: url('./images/Page 1.webp');">
         <div class="lds-heart"><div></div></div>
